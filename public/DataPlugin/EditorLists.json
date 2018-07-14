@@ -1,0 +1,10 @@
+{
+    "editorLists" : [{  "listsName" : "baseComp",
+                        "baseComp" : ["GjButton","GjTextarea"]},
+                     {  "listsName" : "photoCompOne",
+                        "photoCompOne" : ["Test1","Test2"]},
+                     {  "listsName" : "photoCompTwo",
+                        "photoCompTwo" : ["Test1","Test2"]},
+                     {  "listsName" : "photoCompThr",
+                        "photoCompThr" : ["Test1","Test2"]}]
+}

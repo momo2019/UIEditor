@@ -1,0 +1,11 @@
+.gj-trashcan{
+    position: relative;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: #eee;
+    border: #222 1px solid;
+}
+.gj-item-deleted{
+    display: none;
+}

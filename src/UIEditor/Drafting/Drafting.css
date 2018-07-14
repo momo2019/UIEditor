@@ -1,0 +1,15 @@
+.DraftingItem{
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.DraftingItem-Drafting{
+    opacity: .3;
+}
+
+.TestBox{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #aaa;
+}

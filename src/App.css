@@ -1,0 +1,11 @@
+.gj-demo-warp{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+}
+.gj-demo-editorbanner{
+  flex: 1;
+}
+.gj-demo-editorlists{
+  flex: 1;
+}
