@@ -16,7 +16,7 @@ class DraftingArea extends Component{
     }
     render(){
         return (
-            <div className="DraftingArea">
+            <div className="gj-draftingarea">
                 {this.childrenLists.map((item,index) => 
                     <DraftingItem key={"Drafting"+index}>
                         {item}
@@ -39,11 +39,11 @@ class DraftingItem extends Component{
         let draftingNode;
         let flag = true;
     
-        while(tempNode.parentNode.className !== "DraftingArea"){    //寻找到可交换的层
+        while(!$(tempNode.parentNode).hasClass("gj-draftingarea")){    //寻找到可交换的层
             tempNode = tempNode.parentNode;
         }
         
-        draftingNode = $(tempNode.parentNode).children('.DraftingItem-Drafting');
+        draftingNode = $(tempNode.parentNode).children('.gj-draftingitem-drafting');
         if(draftingNode.length === 0){  //判断是否是在本层存在抓取到的元素
             return false;
         }
@@ -69,7 +69,7 @@ class DraftingItem extends Component{
         if(!tempNode){
             return;
         }
-        $(tempNode).addClass("DraftingItem-Drafting");
+        $(tempNode).addClass("gj-draftingitem-drafting");
         event.dataTransfer.setData("thisComp",tempNode.getAttribute("data-id"));
     }
     handleDraftEnd(event){ //释放后取消标记   
@@ -77,12 +77,12 @@ class DraftingItem extends Component{
         if(!tempNode){
             return;
         }
-        $(tempNode).removeClass("DraftingItem-Drafting")
+        $(tempNode).removeClass("gj-draftingitem-drafting")
     }  
 
     render(){
         return (
-            <div className="DraftingItem" draggable={"true"} 
+            <div className="gj-draftingitem" draggable={"true"} 
                 onDragEnter={this.handleDraftChange}
                 onDragStart={this.handleDraftUp} 
                 onDragEnd={this.handleDraftEnd}

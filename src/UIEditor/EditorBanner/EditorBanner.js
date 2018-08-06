@@ -49,7 +49,7 @@ class EditorBanner extends Component{
                      onDrop={this.handleAddDND}
                      onDragOver={this.handleAllowDrop}
                 >
-                    <div className="DraftingArea">
+                    <div className="gj-draftingarea">
                     {
                         this.state.items.map((value,index)=>
                             <DraftingItem dataId={"item"+index} key={"comp"+value+index}>

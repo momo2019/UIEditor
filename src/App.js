@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import GjButton from './ComponentStore/GjButton/GjButton';
+import GjTextArea from './ComponentStore/GjTextArea/GjTextArea';
+import GjLayout from './ComponentStore/GjLayout/GjLayout';
 import EditorBanner from './UIEditor/EditorBanner/EditorBanner';
 import EditorLists from './UIEditor/EditorLists/EditorLists';
 import EditorTrashCan from './UIEditor/EditorTrashCan/EditorTrashCan';
@@ -12,6 +14,8 @@ class App extends Component {
         <div className="gj-demo-editorbanner">
           <EditorBanner>
             <GjButton/>
+            <GjTextArea/>
+            <GjLayout/>
           </EditorBanner>
           <div className="gj-demo-editortrashcan">
             <EditorTrashCan />
