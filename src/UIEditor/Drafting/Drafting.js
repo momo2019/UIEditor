@@ -52,15 +52,14 @@ class DraftingItem extends Component{
             flag = false;
         }  
 
-        setTimeout(()=>{
-            if(flag === true){
-                $(draftingNode).insertAfter(tempNode);
-            }else{
-                $(draftingNode).insertBefore(tempNode);
-            }
-        },10) //设置延迟的原因，交换速度太快导致enter事件多次触发，flag发生错误。
+        if(flag === true){
+            $(draftingNode).insertAfter(tempNode);
+        }else{
+            $(draftingNode).insertBefore(tempNode);
+        }
 
-        
+        event.stopPropagation();  //阻止继续冒泡
+        return false;
     }
 
 
