@@ -19,10 +19,11 @@ const ListsItem = (props) => {
             <ul className="gj-editorlists-lists">
                 {
                     compLists.map((value)=>
-                        <li draggable="true" 
+                        <li 
+                            draggable="true" 
                             className="gj-editorlists-item" 
                             key={ value.toLowerCase() }
-                            data-comp-name={value}
+                            data-comp-name={ value }
                         > 
                             {value} 
                         </li>
@@ -43,7 +44,7 @@ class EditorLists extends Component{
 
         let choosenIndex = $mo.index(cards, card);
         let cardsNum = cards.length;
-        
+
         if( !$mo.hasClass(target, "gj-editorlists-classification") ){
             return false;
         }
@@ -65,10 +66,10 @@ class EditorLists extends Component{
 
     handleItemDND(event){    //拖拽传递需生成组件名
         let target = event.target;
-        if( $mo.hasClass(target, "gj-editorlists-item") ){
+        if( !$mo.hasClass(target, "gj-editorlists-item") ) {
             return false;
         }
-        event.dataTransfer.setData("addComp",target.getAttribute("data-comp-name"));
+        event.dataTransfer.setData("addComp", target.getAttribute("data-comp-name"));
     }
 
     render(){

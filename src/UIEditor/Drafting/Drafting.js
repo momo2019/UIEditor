@@ -27,13 +27,6 @@ class DraftingArea extends Component{
     }
 }
 class DraftingItem extends Component{
-    constructor(props){
-        super(props);
-
-        this.handleDraftChange = this.handleDraftChange.bind(this);
-        this.handleDraftUp = this.handleDraftUp.bind(this);
-        this.handleDraftEnd = this.handleDraftEnd.bind(this);
-    }
     handleDraftChange(event){  //交换位置
         let tempNode = event.target;
         let draftingNode;
@@ -81,10 +74,11 @@ class DraftingItem extends Component{
 
     render(){
         return (
-            <div className="gj-draftingitem" draggable={"true"} 
-                onDragEnter={this.handleDraftChange}
-                onDragStart={this.handleDraftUp} 
-                onDragEnd={this.handleDraftEnd}
+            <div 
+                className="gj-draftingitem" draggable={"true"} 
+                onDragEnter={ ev => this.handleDraftChange(ev) }
+                onDragStart={ ev => this.handleDraftUp(ev) } 
+                onDragEnd={ ev => this.handleDraftEnd(ev) }
                 data-id={this.props.dataId}
             >
                     {this.props.children}

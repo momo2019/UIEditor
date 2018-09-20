@@ -9,9 +9,6 @@ class EditorBanner extends Component{
             items : []
         }
         this.compStore = []; //组件库
-        this.bannerDom = {};
-        this.handleAddDND = this.handleAddDND.bind(this);
-        this.handleAllowDrop = this.handleAllowDrop.bind(this);
     }
 
     handleAllowDrop(event){  //允许Drop事件发生
@@ -44,10 +41,11 @@ class EditorBanner extends Component{
     render(){
         return (
             <div className="gj-editorbanner-box">
-                <div className="gj-editorbanner-default"
-                     ref={(dom)=>this.bannerDom=dom}
-                     onDrop={this.handleAddDND}
-                     onDragOver={this.handleAllowDrop}
+                <div 
+                    className="gj-editorbanner-default"
+                    onDrop={ ev => this.handleAddDND(ev) }
+                    onDragOver={ ev => this.handleAllowDrop(ev) }
+                    ref={ dom => this.bannerDom=dom }
                 >
                     <div className="gj-draftingarea">
                     {
